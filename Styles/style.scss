@@ -1,0 +1,143 @@
+/*#region Theme*/
+$LightTheme: (
+    Darkness: #99a799,
+    components: #adc2a9,
+    light: #d3e4cd,
+    White: #fef5ed,
+  ),
+  (
+    Darkness: #f9cf93,
+    components: #f9e4c8,
+    light: #faeee0,
+    White: #dbd0c0,
+  ),
+  (
+    Darkness: #f4d19b,
+    components: #d7e9f7,
+    light: #fdfce5,
+    White: #f9f3df,
+  );
+
+$DarkTheme: (
+    Darkness: #261c2c,
+    components: #3e2c41,
+    light: #d3e4cd,
+    White: #6e85b2,
+  ),
+  (
+    Darkness: #39311d,
+    components: #7e7474,
+    light: #c4b6b6,
+    White: #ffdd93,
+  ),
+  (
+    Darkness: #1d2d50,
+    components: #133b5c,
+    light: #1e5f74,
+    White: #fcdab7,
+  );
+/*#endregion*/
+
+$Darkness: #99a799;
+$components: #adc2a9;
+$light: #d3e4cd;
+$White: #fef5ed;
+
+*,
+html {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body,
+html {
+  width: 100%;
+}
+body {
+  .Settings {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98vh;
+    margin: 1% 1% 1%;
+    background-color: $Darkness;
+    form {
+      position: relative;
+      width: 18rem;
+      margin-top: 8vh;
+    }
+    .chosen-value,
+    .value-list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    
+    .chosen-value {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 4px;
+      height: 4rem;
+      font-size: 1.1rem;
+      padding: 1rem;
+      background-color: $components;
+      border: 3px solid transparent;
+      transition: .3s ease-in-out;
+      
+      
+      &:hover {
+        background-color: $light;
+        cursor: pointer;        
+      }
+      
+      &:focus,
+      &.open {
+        box-shadow: 0px 5px 8px 0px $Darkness;
+        outline: 0;
+        background-color: $components;
+        color: #000;
+        transition: 1s cubic-bezier(.42,.18,.38,.08);  
+      }
+    }
+
+    .value-list {
+      list-style: none;
+      margin-top: 4rem;
+      box-shadow: 0px 5px 8px 0px $Darkness;
+      overflow: hidden;
+      max-height: 0;
+      transition: .3s ease-in-out;
+      
+      &.open {
+       max-height: 50vh;
+       overflow: auto;
+      }
+      
+      li {
+        position: relative;
+        height: 4rem;
+        background-color: $components;
+        padding: 1rem;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color .3s;
+        opacity: 1;
+        
+        &:hover {
+          background-color: $light;
+        }
+        
+        &.closed {
+          max-height: 0;
+          overflow: hidden;
+          padding: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
