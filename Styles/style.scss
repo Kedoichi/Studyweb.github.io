@@ -64,109 +64,158 @@ body {
     flex-direction: column;
     padding: 0px 1%;
     margin: 1% 1% 1%;
+    width: 18%;
     background-color: $Darkness;
     .ThemSelection {
       position: relative;
-      min-width: 7rem;
       margin-top: 3vh;
       height: 20rem;
       border-radius: 30px;
       background-color: $components;
       overflow: hidden;
-    }
-    .chosen-value,
-    .value-list {
-      //position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-    }
 
-    .chosen-value {
-      border-radius: 30px;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 4px;
-      height: 20rem;
-      font-size: 1.1rem;
-      padding: 1rem;
-      background-color: $components;
-      border: 3px solid transparent;
-      transition: 0.3s ease-in-out;
-
-      &:hover {
-        background-color: $light;
-        cursor: pointer;
+      .chosen-value,
+      .value-list {
+        //position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
       }
 
-      &:focus,
-      &.open {
-        height: 4rem;
-        outline: 0;
-        background-color: $components;
-        color: #000;
-        border-radius: 30px 30px 0px 0px;
-      }
-    }
-
-    .value-list {
-      border-radius: 0px 0px 30px 30px;
-      list-style: none;
-      //margin-top: 4rem;
-      box-shadow: 0px 5px 8px 0px $Darkness;
-      overflow: auto;
-      height: 0;
-      overflow-y: scroll;
-      height: 16rem;
-
-      li {
-        position: relative;
-        height: 4rem;
-        background-color: $components;
-        padding: 1rem;
+      .chosen-value {
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 4px;
+        height: 20rem;
         font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        opacity: 1;
+        padding: 1rem;
+        background-color: $components;
+        border: 3px solid transparent;
+        transition: 0.3s ease-in-out;
 
         &:hover {
           background-color: $light;
+          cursor: pointer;
         }
 
-        &.closed {
-          max-height: 0;
-          overflow: hidden;
-          padding: 0;
-          opacity: 0;
+        &:focus,
+        &.open {
+          height: 4rem;
+          outline: 0;
+          background-color: $components;
+          color: #000;
+          border-radius: 30px 30px 0px 0px;
         }
+      }
+
+      .value-list {
+        border-radius: 0px 0px 30px 30px;
+        list-style: none;
+        //margin-top: 4rem;
+        box-shadow: 0px 5px 8px 0px $Darkness;
+        overflow: auto;
+        height: 0;
+        overflow-y: scroll;
+        height: 16rem;
+
+        li {
+          position: relative;
+          height: 4rem;
+          background-color: $components;
+          padding: 1rem;
+          font-size: 1.1rem;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          transition: background-color 0.3s;
+          opacity: 1;
+
+          &:hover {
+            background-color: $light;
+          }
+
+          &.closed {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0;
+            opacity: 0;
+          }
+        }
+      }
+      .Player {
+        .box {
+          background-color: $components;
+        }
+        .Themes {
+          display: flex;
+          flex-direction: row;
+        }
+        .MusicControl {
+          display: flex;
+          flex-direction: row;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: $components;
+      }
+      ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0px 0px 42px 2px $Darkness;
+        background-clip: padding-box;
+        border-radius: 30px 0px 0px 30px;
       }
     }
     .Player {
-      .box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+      overflow: hidden;
+      i {
+        vertical-align: middle;
+        font-size: 25px;
+        mix-blend-mode: normal;
+      }
+      .btn {
+        height: 55px;
+        padding: 0px 10px;
+        border-radius: 20px;
         background-color: $components;
+        cursor: pointer;
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 2px;
+        overflow: hidden;
+        &:hover{
+          background-color: $light;
+        }
       }
+
       .Themes {
+        width: 100%;
         display: flex;
-        flex-direction: row;
+        .Save {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 10px;
+        }
+        .info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex: 5;
+          padding: 0px 20px;
+        }
       }
-      .MusicControl {
-        display: flex;
-        flex-direction: row;
-      }
     }
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background-color: $components;
-    }
-    ::-webkit-scrollbar-thumb {
-      box-shadow: inset 0px 0px 42px 2px $Darkness;
-      background-clip: padding-box;
-      border-radius: 30px 0px 0px 30px;
+
+    .MusicControl {
     }
   }
 }

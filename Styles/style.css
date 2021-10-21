@@ -29,12 +29,12 @@ body .Settings {
           flex-direction: column;
   padding: 0px 1%;
   margin: 1% 1% 1%;
+  width: 18%;
   background-color: #99a799;
 }
 
 body .Settings .ThemSelection {
   position: relative;
-  min-width: 7rem;
   margin-top: 3vh;
   height: 20rem;
   border-radius: 30px;
@@ -42,15 +42,15 @@ body .Settings .ThemSelection {
   overflow: hidden;
 }
 
-body .Settings .chosen-value,
-body .Settings .value-list {
+body .Settings .ThemSelection .chosen-value,
+body .Settings .ThemSelection .value-list {
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
 }
 
-body .Settings .chosen-value {
+body .Settings .ThemSelection .chosen-value {
   border-radius: 30px;
   text-transform: uppercase;
   font-weight: 600;
@@ -64,12 +64,12 @@ body .Settings .chosen-value {
   transition: 0.3s ease-in-out;
 }
 
-body .Settings .chosen-value:hover {
+body .Settings .ThemSelection .chosen-value:hover {
   background-color: #d3e4cd;
   cursor: pointer;
 }
 
-body .Settings .chosen-value:focus, body .Settings .chosen-value.open {
+body .Settings .ThemSelection .chosen-value:focus, body .Settings .ThemSelection .chosen-value.open {
   height: 4rem;
   outline: 0;
   background-color: #adc2a9;
@@ -77,7 +77,7 @@ body .Settings .chosen-value:focus, body .Settings .chosen-value.open {
   border-radius: 30px 30px 0px 0px;
 }
 
-body .Settings .value-list {
+body .Settings .ThemSelection .value-list {
   border-radius: 0px 0px 30px 30px;
   list-style: none;
   -webkit-box-shadow: 0px 5px 8px 0px #99a799;
@@ -88,7 +88,7 @@ body .Settings .value-list {
   height: 16rem;
 }
 
-body .Settings .value-list li {
+body .Settings .ThemSelection .value-list li {
   position: relative;
   height: 4rem;
   background-color: #adc2a9;
@@ -106,22 +106,22 @@ body .Settings .value-list li {
   opacity: 1;
 }
 
-body .Settings .value-list li:hover {
+body .Settings .ThemSelection .value-list li:hover {
   background-color: #d3e4cd;
 }
 
-body .Settings .value-list li.closed {
+body .Settings .ThemSelection .value-list li.closed {
   max-height: 0;
   overflow: hidden;
   padding: 0;
   opacity: 0;
 }
 
-body .Settings .Player .box {
+body .Settings .ThemSelection .Player .box {
   background-color: #adc2a9;
 }
 
-body .Settings .Player .Themes {
+body .Settings .ThemSelection .Player .Themes {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,7 +131,7 @@ body .Settings .Player .Themes {
           flex-direction: row;
 }
 
-body .Settings .Player .MusicControl {
+body .Settings .ThemSelection .Player .MusicControl {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,18 +141,92 @@ body .Settings .Player .MusicControl {
           flex-direction: row;
 }
 
-body .Settings ::-webkit-scrollbar {
+body .Settings .ThemSelection ::-webkit-scrollbar {
   width: 5px;
 }
 
-body .Settings ::-webkit-scrollbar-track {
+body .Settings .ThemSelection ::-webkit-scrollbar-track {
   background-color: #adc2a9;
 }
 
-body .Settings ::-webkit-scrollbar-thumb {
+body .Settings .ThemSelection ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0px 0px 42px 2px #99a799;
           box-shadow: inset 0px 0px 42px 2px #99a799;
   background-clip: padding-box;
   border-radius: 30px 0px 0px 30px;
+}
+
+body .Settings .Player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+body .Settings .Player i {
+  vertical-align: middle;
+  font-size: 25px;
+  mix-blend-mode: normal;
+}
+
+body .Settings .Player .btn {
+  height: 55px;
+  padding: 0px 10px;
+  border-radius: 20px;
+  background-color: #adc2a9;
+  cursor: pointer;
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 2px;
+  overflow: hidden;
+}
+
+body .Settings .Player .btn:hover {
+  background-color: #d3e4cd;
+}
+
+body .Settings .Player .Themes {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .Settings .Player .Themes .Save {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10px;
+}
+
+body .Settings .Player .Themes .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  padding: 0px 20px;
 }
 /*# sourceMappingURL=style.css.map */
