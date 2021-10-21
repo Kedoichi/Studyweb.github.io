@@ -229,4 +229,50 @@ body .Settings .Player .Themes .info {
           flex: 5;
   padding: 0px 20px;
 }
+
+body .Settings .MusicControl {
+  width: 100%;
+  background-color: #adc2a9;
+  border-radius: 30px;
+  margin-top: 15px;
+  padding: 10px 10px;
+}
+
+body .Settings .MusicControl i {
+  vertical-align: middle;
+  font-size: 25px;
+  width: 10%;
+  mix-blend-mode: normal;
+}
+
+body .Settings .MusicControl input {
+  vertical-align: middle;
+  height: 2px;
+  width: 80%;
+  margin-left: 12px;
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  -webkit-transition: 0.2s;
+  -webkit-appearance: none;
+}
+
+body .Settings .MusicControl input:hover {
+  opacity: 1;
+}
+
+body .Settings .MusicControl input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #99a799;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body .Settings .MusicControl input::-moz-range-thumb {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
