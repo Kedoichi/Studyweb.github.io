@@ -6,22 +6,47 @@
     <title>Document</title>
     <link rel="stylesheet" href="Styles/style.css" />
     <script src="script/script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="Settings">
-      <form>
+    <nav class="Settings">
+      <div class="ThemSelection">
         <input
           class="chosen-value"
           type="text"
-          value="Cafe"
+          value=""
+          placeholder="Select Theme"
         />
         <ul class="value-list">
           <li>Cafe</li>
-          <li>City</li>
+          <li>City 1</li>
+          <li>City 2</li>
+          <li>City 3</li>
+          <li>City 4</li>
           <li>Window</li>
           <li>Anime</li>
         </ul>
-      </form>
-    </div>
+      </div>
+
+      <nav class="Player">
+        <div class="Themes">
+          <div class="Name">Theme Name</div>
+          <div class="Save">
+            <img src="./src/img/heart.svg" alt="" />
+          </div>
+          <div class="Refresh">
+            <i class="bx bx-refresh"></i>
+          </div>
+        </div>
+        <div class="MusicControl">
+          <i class="bx bx-volume-full"></i>
+          <input type="range" min="1" max="100" value="0" />
+        </div>
+      </nav>
+    </nav>
   </body>
 </html>

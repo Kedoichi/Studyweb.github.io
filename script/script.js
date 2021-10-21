@@ -1,70 +1,46 @@
-const inputField = document.querySelector(".chosen-value");
-const dropdown = document.querySelector(".value-list");
-const dropdownArray = [...document.querySelectorAll("li")];
+$(document).ready(function () {
+  //Close the dropdown
+  $(".value-list").removeClass("open");
 
+  //Find feature
+  $(".chosen-value").keyup(function () {
+    let inputValue = $(this).val().toLowerCase();
 
-console.log(typeof dropdownArray);
-dropdown.classList.add("open");
-inputField.focus(); // Demo purposes only
-let valueArray = [];
-dropdownArray.forEach((item) => {
-  valueArray.push(item.textContent);
-});
-
-const closeDropdown = () => {
-  dropdown.classList.remove("open");
-};
-
-inputField.addEventListener("input", () => {
-  dropdown.classList.add("open");
-  let inputValue = inputField.value.toLowerCase();
-  let valueSubstring;
-  if (inputValue.length > 0) {
-    for (let j = 0; j < valueArray.length; j++) {
-      if (
-        !(
-          inputValue.substring(0, inputValue.length) ===
-          valueArray[j].substring(0, inputValue.length).toLowerCase()
-        )
-      ) {
-        dropdownArray[j].classList.add("closed");
-      } else {
-        dropdownArray[j].classList.remove("closed");
+    if (inputValue.length > 0) {
+      $(".value-list > li").each(function () {
+        if (
+          !(
+            inputValue.substring(0, inputValue.length) ===
+            $(this).text().substring(0, inputValue.length).toLowerCase()
+          )
+        ) {
+          $(this).addClass("closed");
+        } else {
+          $(this).removeClass("closed");
+        }
+      });
+    } else {
+      for (let i = 0; i < dropdownArray.length; i++) {
+        $(this).removeClass("closed");
       }
     }
-  } else {
-    for (let i = 0; i < dropdownArray.length; i++) {
-      dropdownArray[i].classList.remove("closed");
-    }
-  }
-});
+  });
 
-dropdownArray.forEach((item) => {
-  item.addEventListener("click", (evt) => {
-    inputField.value = item.textContent;
-    dropdownArray.forEach((dropdown) => {
-      dropdown.classList.add("closed");
+  $(".chosen-value").click(function () {
+    $(this).attr("placeholder", "Type to filter");
+    $(this).addClass("open");
+    $(".value-list > li").removeClass("closed");
+  });
+
+  //Select Theme => Change layout
+  $(".value-list li").each(function () {
+    $(this).on("click", function () {
+      $(".chosen-value").val($(this).text());
+      $(".chosen-value").removeClass("open");
     });
   });
-});
 
-inputField.addEventListener("focus", () => {
-  inputField.placeholder = "Type to filter";
-  dropdown.classList.add("open");
-  dropdownArray.forEach((dropdown) => {
-    dropdown.classList.remove("closed");
+  $(".ThemSelection").mouseleave("click", function () {
+    $(".chosen-value").removeClass("open");
   });
-});
-
-inputField.addEventListener("blur", () => {
-  inputField.placeholder = "Select state";
-  dropdown.classList.remove("open");
-});
-
-document.addEventListener("click", (evt) => {
-  const isDropdown = dropdown.contains(evt.target);
-  const isInput = inputField.contains(evt.target);
-  if (!isDropdown && !isInput) {
-    dropdown.classList.remove("open");
-  }
 });

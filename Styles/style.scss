@@ -55,66 +55,71 @@ html {
 }
 body {
   .Settings {
-    position: absolute;
+    position: fixed;
+    min-height: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 98vh;
+    padding: 0px 1%;
     margin: 1% 1% 1%;
     background-color: $Darkness;
-    form {
+    .ThemSelection {
       position: relative;
-      width: 18rem;
-      margin-top: 8vh;
+      min-width: 7rem;
+      margin-top: 3vh;
+      height: 20rem;
+      border-radius: 30px;
+      background-color: $components;
+      overflow: hidden;
     }
     .chosen-value,
     .value-list {
-      position: absolute;
+      //position: absolute;
       top: 0;
       left: 0;
       width: 100%;
+      z-index: 100;
     }
-    
+
     .chosen-value {
+      border-radius: 30px;
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 4px;
-      height: 4rem;
+      height: 20rem;
       font-size: 1.1rem;
       padding: 1rem;
       background-color: $components;
       border: 3px solid transparent;
-      transition: .3s ease-in-out;
-      
-      
+      transition: 0.3s ease-in-out;
+
       &:hover {
         background-color: $light;
-        cursor: pointer;        
+        cursor: pointer;
       }
-      
+
       &:focus,
       &.open {
-        box-shadow: 0px 5px 8px 0px $Darkness;
+        height: 4rem;
         outline: 0;
         background-color: $components;
         color: #000;
-        transition: 1s cubic-bezier(.42,.18,.38,.08);  
+        border-radius: 30px 30px 0px 0px;
       }
     }
 
     .value-list {
+      border-radius: 0px 0px 30px 30px;
       list-style: none;
-      margin-top: 4rem;
+      //margin-top: 4rem;
       box-shadow: 0px 5px 8px 0px $Darkness;
-      overflow: hidden;
-      max-height: 0;
-      transition: .3s ease-in-out;
-      
-      &.open {
-       max-height: 50vh;
-       overflow: auto;
-      }
-      
+      overflow: auto;
+      height: 0;
+      overflow-y: scroll;
+      height: 16rem;
+
       li {
         position: relative;
         height: 4rem;
@@ -124,13 +129,13 @@ body {
         display: flex;
         align-items: center;
         cursor: pointer;
-        transition: background-color .3s;
+        transition: background-color 0.3s;
         opacity: 1;
-        
+
         &:hover {
           background-color: $light;
         }
-        
+
         &.closed {
           max-height: 0;
           overflow: hidden;
@@ -138,6 +143,30 @@ body {
           opacity: 0;
         }
       }
+    }
+    .Player {
+      .box {
+        background-color: $components;
+      }
+      .Themes {
+        display: flex;
+        flex-direction: row;
+      }
+      .MusicControl {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: $components;
+    }
+    ::-webkit-scrollbar-thumb {
+      box-shadow: inset 0px 0px 42px 2px $Darkness;
+      background-clip: padding-box;
+      border-radius: 30px 0px 0px 30px;
     }
   }
 }
