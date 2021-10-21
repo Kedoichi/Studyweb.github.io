@@ -20,11 +20,13 @@ html {
 
 body {
   font-family: Moon;
+  overflow: hidden;
 }
 
 body .Settings {
   -webkit-animation: flyin 0.5s ease-in-out forwards;
           animation: flyin 0.5s ease-in-out forwards;
+  z-index: 9999;
   position: absolute;
   min-height: 80%;
   top: 50%;
@@ -293,6 +295,7 @@ body .flyout {
 }
 
 body .features {
+  z-index: 30;
   position: absolute;
   height: auto;
   top: 50%;
@@ -374,6 +377,26 @@ body .features li:hover {
 body .features i {
   font-size: 30px;
   font-weight: lighter;
+}
+
+body .videoPlayer {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+body .videoPlayer iframe {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -2222;
+  position: absolute;
 }
 
 @-webkit-keyframes flyin {
