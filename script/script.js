@@ -1,7 +1,9 @@
 $(document).ready(function () {
-  //Close the dropdown
+  //Setup - Close the dropdown + first animation
   $(".value-list").removeClass("open");
-
+  $(".Settings").addClass("flyin");
+  $(".features").addClass("open");
+  $(".features .more i").addClass("open");
   //Find feature
   $(".chosen-value").keyup(function () {
     let inputValue = $(this).val().toLowerCase();
@@ -42,5 +44,19 @@ $(document).ready(function () {
 
   $(".ThemSelection").mouseleave("click", function () {
     $(".chosen-value").removeClass("open");
+  });
+
+  $(".more").click(function () {
+    if ($(".features .more i").hasClass("open")) {
+      $(".features .more i").removeClass("open");
+      $(".Settings").addClass("flyout");
+      $(".Settings").removeClass("flyin");
+      $(".features").removeClass("open");
+    } else {
+      $(".features .more i").addClass("open");
+      $(".Settings").addClass("flyin");
+      $(".Settings").removeClass("flyout");
+      $(".features").addClass("open");
+    }
   });
 });
